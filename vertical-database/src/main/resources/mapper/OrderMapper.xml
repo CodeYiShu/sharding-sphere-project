@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codeshu.mapper.OrderMapper">
+    <select id="getByIdWithUserName" resultType="com.codeshu.entity.OrderVo">
+        SELECT *
+        FROM t_order AS T1
+        LEFT JOIN t_user AS T2 ON T2.id = T1.user_id
+        WHERE T1.id = #{id}
+    </select>
+</mapper>

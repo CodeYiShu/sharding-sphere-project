@@ -6,6 +6,8 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/readwrite-splitting/pom.xml" />
+        <option value="$PROJECT_DIR$/vertical-database/pom.xml" />
+        <option value="$PROJECT_DIR$/horizontal-fragment/pom.xml" />
       </list>
     </option>
   </component>
