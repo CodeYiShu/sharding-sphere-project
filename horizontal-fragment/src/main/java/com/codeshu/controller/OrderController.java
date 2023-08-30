@@ -3,6 +3,7 @@ package com.codeshu.controller;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.codeshu.entity.Order;
 import com.codeshu.mapper.OrderMapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +32,13 @@ public class OrderController {
 	public List<Order> getAll(Long userId) {
 		LambdaQueryWrapper<Order> queryWrapper = new LambdaQueryWrapper<>();
 		queryWrapper.eq(Order::getUserId, userId);
+		return orderMapper.selectList(queryWrapper);
+	}
+
+	@GetMapping("getByUserIdAndOrderNo")
+	public List<Order> getAll(@Param("userId") Long userId, @Param("orderNo") String orderNo) {
+		LambdaQueryWrapper<Order> queryWrapper = new LambdaQueryWrapper<>();
+		queryWrapper.eq(Order::getUserId, userId).eq(Order::getOrderNo, orderNo);
 		return orderMapper.selectList(queryWrapper);
 	}
 
