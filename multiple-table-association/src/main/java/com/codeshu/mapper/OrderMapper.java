@@ -2,7 +2,10 @@ package com.codeshu.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.codeshu.entity.Order;
+import com.codeshu.vo.OrderVo;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @author CodeShu
@@ -10,4 +13,8 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface OrderMapper extends BaseMapper<Order> {
+	/**
+	 * 查询所有订单的总金额
+	 */
+	List<OrderVo> getAllOrderAmount();
 }

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.codeshu.mapper.OrderMapper">
-
+    <select id="getAllOrderAmount" resultType="com.codeshu.vo.OrderVo">
+        SELECT T1.order_no orderNo, SUM(T2.price * T2.count) orderAmount
+        FROM t_order T1
+        LEFT JOIN t_order_item T2 ON T2.order_no = T1.order_no
+        GROUP BY T1.order_no
+    </select>
 </mapper>

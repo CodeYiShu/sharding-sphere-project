@@ -6,7 +6,9 @@ import com.codeshu.mapper.OrderItemMapper;
 import com.codeshu.mapper.OrderMapper;
 import com.codeshu.request.OrderItemInsertRequest;
 import com.codeshu.utils.ConvertUtils;
+import com.codeshu.vo.OrderVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,5 +39,10 @@ public class OrderController {
 			orderItemMapper.insert(orderItem);
 		}
 		return "插入成功";
+	}
+
+	@GetMapping("getAllOrderAmount")
+	public List<OrderVo> getAllOrderAmount() {
+		return orderMapper.getAllOrderAmount();
 	}
 }
