@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/readwrite-splitting/pom.xml" />
         <option value="$PROJECT_DIR$/vertical-database/pom.xml" />
         <option value="$PROJECT_DIR$/horizontal-fragment/pom.xml" />
+        <option value="$PROJECT_DIR$/multiple-table-association/pom.xml" />
       </list>
     </option>
   </component>
